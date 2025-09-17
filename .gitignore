@@ -5,5 +5,6 @@ __pycache__/
 *.h5
 *.ipynb_checkpoints/
 .DS_Store
-house_data_done.csv
+cleaned_house_data.csv
 house_data.csv
+.env
