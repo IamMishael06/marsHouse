@@ -1,0 +1,39 @@
+html
+{
+    scroll-behavior: smooth;
+
+}
+.logo{
+    font-family: "EB Garamond", serif;
+}
+.nav-items{
+      font-family: "EB Garamond", serif;
+}
+h1{
+    font-family: "EB Garamond", serif;
+}
+p, .hero button{
+    font-family: 'lato', sans-serif;
+    font-weight:300;
+}
+.How-it-works button{
+        font-family: 'lato', sans-serif;
+    font-weight:300;
+}
+.pillar p{
+     font-weight:500;
+}
+ .How-it-works h2{
+    font-family: 'lato', sans-serif;
+}
+label{
+    font-family: 'lato', sans-serif;
+    font-weight:500;
+    color: #C0A062;
+}
+form input, form select, form textarea{
+    outline: none;
+}
+form select{
+    color: #969696;
+}

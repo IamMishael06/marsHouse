@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarsHouse</title>
+    <link rel="stylesheet" href="style.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+     <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+</head>
+<body class="mx-auto w-[90%]">
+        <nav class="w-full mx-auto flex md:flex-row items-center h-[80px] flex-col justify-between mt-10">
+    <div class="logo text-[40px]"><a href="home.html"><span class="text-[#C0A062]">M</span>ars<span class="text-[#C0A062]">H</span>ouse</a></div>
+    <ul class="nav-items flex  w-[30%] items-center text-[20px]  gap-[20%] ">
+        <li class="hover:text-[#C0A062]  transition-[0.3s] "><a href="./home.html#about">About</a></li>
+        <li class="hover:text-[#C0A062]  transition-[0.3s] "><a href="./home.html#Hiw">How it works</a></li>
+        <li class="hover:text-[#C0A062]  transition-[0.3s] "><a href="form.html">Price</a></li>
+    </ul>
+    </nav>
+    <hr class="border-[0.5px] border-black mx-auto mt-5">
+    <h1 class="text-[80px]">Property Details</h1>
+    <p class="text-[#5f5f5f83] w-[80%] text-[16px]"><i class="fa-solid fa-circle-info text-[red]"></i> The price estimates provided are for informational purposes only. Although accurate, Actual property values may differ due to market fluctuations, inflation, individual seller preferences, and the inherent limitations of predictive models.</p>
+
+    <form action="" class="h-auto lg:h-[70vh] w-full mt-5 flex flex-col lg:flex-row flex-wrap gap-5 justify-between">
+            <div class="w-[48%] flex flex-col gap-3">
+                <label for="bedrooms">Number of Bedrooms</label>
+                <input class="border-[1px] border-[#0000007d] rounded-sm h-[40px] pl-3" type="number" name="bedrooms" id="bedrooms" placeholder="E.g., 3" required>
+            </div>
+            <div class="w-[48%] flex flex-col gap-3">
+                <label for="bathrooms">Number of Bathrooms</label>
+                <input class="border-[1px] border-[#0000007d] rounded-sm h-[40px] pl-3" type="number" name="bathrooms" id="bathrooms" placeholder="E.g., 2" required>
+            </div>
+            <div class="w-[48%] flex flex-col gap-3">
+                <label for="toilets">Number of Toilets</label>
+                <input class="border-[1px] border-[#0000007d] rounded-sm h-[40px] pl-3" type="number" name="toilets" id="toilets" placeholder="E.g., 2" required>
+            </div>
+            <div class="w-[48%] flex flex-col gap-3">
+                <label for="extras">Extras (Number of exclusive utilities. e.g pools, garden, theatre room )</label>
+                <input class="border-[1px] border-[#0000007d] rounded-sm h-[40px] pl-3" type="number" name="extras" id="extras" placeholder="E.g 1" required>
+            </div>
+            <div class="w-[48%] flex flex-col gap-3">
+                <label for="town">Town</label>
+                <input type="text" name="town" id="town" class="border-[1px] border-[#0000007d] rounded-sm h-[40px] pl-3" placeholder="E.g., Ikeja" required>
+            </div>
+            <div class="w-[48%] flex flex-col gap-3">
+                <label for="state">State</label>
+                <select name="state" id="state" class="border-[1px] border-[#0000007d] rounded-sm h-[40px] pl-3" required>
+                    <option value="">Select State</option>
+                    <option value="Lagos">Lagos</option>
+                    <option value="Abuja">Abuja</option>
+                    <option value="Oyo">Oyo </option>
+                    <option value="Ogun">Ogun</option>
+                    <option value="Delta">Delta</option>
+                    <option value="Enugu">Enugu</option>
+                    <option value="Kaduna">Kaduna</option>
+                    <option value="Rivers">Rivers</option>
+                </select>
+            </div>
+             
+             <div class="w-[48%] flex flex-col gap-3">
+                <label for="title">Title (type of house)</label>
+                <select name="title" id="title" class="border-[1px] border-[#0000007d] rounded-sm h-[40px] pl-3" required>
+                    <option value="">Select Apartment type</option>
+                    <option value="flat apartment">Flat apartment</option>
+                    <option value="terraced duplex">Terraced duplex</option>
+                    <option value="blocks of flats">Blocks of flats</option>
+                    <option value="semi detached duplex">Semi detached duplex</option>
+                    <option value="detached duplex">Detached duplex</option>
+                    <option value="mini flat apartment">Mini flat apartment   </option>
+                    <option value="massionette">Massionette</option>
+                    <option value="mini flat self contain flat apartment">Mini flat self contain</option>
+                    <option value="mini flat studio apartment flat apartment">Studio apartment (self contain)</option>
+                    <option value="shared apartment flat apartment">Shared apartment</option>
+                    <option value="penthouse flat apartment">Penthouse</option>
+                    <option value="detached bungalow">Detached bungalow</option>
+                    <option value="studio apartment flat apartment">Studio apartment</option>
+                    <option value="commercial property">Commercial property</option>
+                    <option value="semi detached bungalow">Semi detached bungalow</option>
+                    <option value="terraced bungalow">Terraced bungalow </option>
+                </select>
+                </div> 
+            <div class="w-[48%] flex flex-col gap-3">
+                <label for="parking">Parking Space</label>
+                <div class="flex gap-5">
+                 <span class="flex gap-2"><input class="" name="parking" id="parking" type="radio" value="Yes">Yes</span>
+                <span class="flex gap-2"><input type="radio" name="parking" id="parking" value="No">No</span>
+                </div>
+            </div>
+            <div class="w-[48%] flex flex-col gap-3">
+                <label for="SE">Serviced</label>
+                <div class="flex gap-5">
+                 <span class="flex gap-2"><input name="serviced" id="serviced" type="radio" value="Yes">Yes</span>
+                <span class="flex gap-2"><input type="radio" name="serviced" id="serviced" value="No">No</span>
+                </div>
+            </div>
+             <div class="w-[48%] flex flex-col gap-3">
+                <label for="SE">Stable Electricity (24/7)</label>
+                <div class="flex gap-5">
+                 <span class="flex gap-2"><input name="Stable Electricity" id="SE" type="radio" value="Yes">Yes</span>
+                <span class="flex gap-2"><input type="radio" name="Stable Electricity" id="SE" value="No">No</span>
+                </div>
+            </div> 
+            
+    <button onclick="showLoader()" class="text-[white] w-[20%] bg-[#C0A062] font-light transition-[0.6s] py-3 mt-10 rounded-sm cursor-pointer">Get Estimate</button>
+    </form>
+    <div class="fixed h-[100vh] w-full top-0 left-0 backdrop-blur-sm z-[99] flex justify-center items-center" id="loading" style="display: none;">
+        <i class="fa-solid fa-spinner fa-spin fa-2x" style="color:#C0A062;"></i>
+    </div>
+   
+  
+      
+     
+       
+       
+        
+       
+       
+<script src="index.js"></script>
+</body>
+
+</html>
