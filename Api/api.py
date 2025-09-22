@@ -64,10 +64,7 @@ def make_prediction(form_data: FormData):
     # Turning the first letter in town to uppercase to match training data
     form_data.town  = form_data.town.capitalize()
     # Replacing ,,;,-,_ with whitespace to match training data
-    if form_data.town == "Ibeju-Lekki": # Exception case
-        form_data.town = form_data.town.replace(","," ").replace(";"," ").replace("_"," ")
-    else:
-        form_data.town = form_data.town.replace(","," ").replace(";"," ").replace("-"," ").replace("_"," ")
+    form_data.town = form_data.town.replace(","," ").replace(";"," ").replace("_"," ")
     
     df = pd.DataFrame([form_data.dict(by_alias=True)]) # Convert form data to DataFrame
     
