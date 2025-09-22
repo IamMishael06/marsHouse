@@ -37,3 +37,36 @@ form input, form select, form textarea{
 form select{
     color: #969696;
 }
+@media screen and (max-width:600px) {
+    nav{
+        height: auto;
+    }
+    .nav-items{
+        flex-direction: column;
+        width: 80%;
+    }
+}
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+    body{
+        overflow-x: hidden;
+    }
+    nav {
+    flex-direction: row;
+    }
+    .nav-items {
+    width: 50%;
+    }
+
+}
+@media only screen and (min-width: 800px) and (max-width: 1024px) {
+    body{
+        overflow-x: hidden;
+    }
+    nav {
+    flex-direction: row;
+    }
+    .nav-items {
+    width: 50%;
+    }
+
+}
