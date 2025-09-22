@@ -12,6 +12,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
       crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
 </head>
 <body class="mx-auto w-[90%]">
@@ -24,31 +25,31 @@
     </ul>
     </nav>
     <hr class="border-[0.5px] border-black mx-auto mt-5">
-    <h1 class="text-[80px]">Property Details</h1>
-    <p class="text-[#5f5f5f83] w-[80%] text-[16px]"><i class="fa-solid fa-circle-info text-[red]"></i> The price estimates provided are for informational purposes only. Although accurate, Actual property values may differ due to market fluctuations, inflation, individual seller preferences, and the inherent limitations of predictive models.</p>
+    <h1 class="lg:text-[80px] md:text-[60px] text-[40px]">Property Details</h1>
+    <p class="text-[#5f5f5f83] lg:w-[80%] md:text-[16px] text-[14px]"><i class="fa-solid fa-circle-info text-[red]"></i> The price estimates provided are for informational purposes only. Although accurate, Actual property values may differ due to market fluctuations, inflation, individual seller preferences, and the inherent limitations of predictive models.</p>
 
-    <form action="" class="h-auto lg:h-[70vh] w-full mt-5 flex flex-col lg:flex-row flex-wrap gap-5 justify-between">
-            <div class="w-[48%] flex flex-col gap-3">
+    <form method="post" action="" class="h-auto lg:h-[70vh] w-full mt-5 flex flex-col lg:flex-row flex-wrap gap-5 justify-between">
+            <div class="lg:w-[48%] w-full md:w-[70%] sm:w-[80%]  flex flex-col gap-3">
                 <label for="bedrooms">Number of Bedrooms</label>
-                <input class="border-[1px] border-[#0000007d] rounded-sm h-[40px] pl-3" type="number" name="bedrooms" id="bedrooms" placeholder="E.g., 3" required>
+                <input class="border-[1px] border-[#0000007d] rounded-sm h-[40px] pl-3" type="number" name="bedroom" id="bedrooms" placeholder="E.g., 3" required>
             </div>
-            <div class="w-[48%] flex flex-col gap-3">
+            <div class="lg:w-[48%] w-full md:w-[70%] sm:w-[80%] flex flex-col gap-3">
                 <label for="bathrooms">Number of Bathrooms</label>
-                <input class="border-[1px] border-[#0000007d] rounded-sm h-[40px] pl-3" type="number" name="bathrooms" id="bathrooms" placeholder="E.g., 2" required>
+                <input class="border-[1px] border-[#0000007d] rounded-sm h-[40px] pl-3" type="number" name="bathroom" id="bathrooms" placeholder="E.g., 2" required>
             </div>
-            <div class="w-[48%] flex flex-col gap-3">
+            <div class="lg:w-[48%] w-full md:w-[70%] sm:w-[80%] flex flex-col gap-3">
                 <label for="toilets">Number of Toilets</label>
                 <input class="border-[1px] border-[#0000007d] rounded-sm h-[40px] pl-3" type="number" name="toilets" id="toilets" placeholder="E.g., 2" required>
             </div>
-            <div class="w-[48%] flex flex-col gap-3">
+            <div class="lg:w-[48%] w-full md:w-[70%] sm:w-[80%] flex flex-col gap-3">
                 <label for="extras">Extras (Number of exclusive utilities. e.g pools, garden, theatre room )</label>
                 <input class="border-[1px] border-[#0000007d] rounded-sm h-[40px] pl-3" type="number" name="extras" id="extras" placeholder="E.g 1" required>
             </div>
-            <div class="w-[48%] flex flex-col gap-3">
+            <div class="lg:w-[48%] w-full md:w-[70%] sm:w-[80%] flex flex-col gap-3">
                 <label for="town">Town</label>
                 <input type="text" name="town" id="town" class="border-[1px] border-[#0000007d] rounded-sm h-[40px] pl-3" placeholder="E.g., Ikeja" required>
             </div>
-            <div class="w-[48%] flex flex-col gap-3">
+            <div class="lg:w-[48%] w-full md:w-[70%] sm:w-[80%] flex flex-col gap-3">
                 <label for="state">State</label>
                 <select name="state" id="state" class="border-[1px] border-[#0000007d] rounded-sm h-[40px] pl-3" required>
                     <option value="">Select State</option>
@@ -63,7 +64,7 @@
                 </select>
             </div>
              
-             <div class="w-[48%] flex flex-col gap-3">
+             <div class="lg:w-[48%] w-full md:w-[70%] sm:w-[80%] flex flex-col gap-3">
                 <label for="title">Title (type of house)</label>
                 <select name="title" id="title" class="border-[1px] border-[#0000007d] rounded-sm h-[40px] pl-3" required>
                     <option value="">Select Apartment type</option>
@@ -85,33 +86,43 @@
                     <option value="terraced bungalow">Terraced bungalow </option>
                 </select>
                 </div> 
-            <div class="w-[48%] flex flex-col gap-3">
+            <div class="lg:w-[48%] w-full md:w-[70%] sm:w-[80%] flex flex-col gap-3">
                 <label for="parking">Parking Space</label>
                 <div class="flex gap-5">
-                 <span class="flex gap-2"><input class="" name="parking" id="parking" type="radio" value="Yes">Yes</span>
-                <span class="flex gap-2"><input type="radio" name="parking" id="parking" value="No">No</span>
+                 <span class="flex gap-2"><input class="" name="parking_lot" id="parking" type="radio" value="1">Yes</span>
+                <span class="flex gap-2"><input type="radio" name="parking_lot" id="parking" value="0">No</span>
                 </div>
             </div>
-            <div class="w-[48%] flex flex-col gap-3">
+            <div class="lg:w-[48%] w-full md:w-[70%] sm:w-[80%] flex flex-col gap-3">
                 <label for="SE">Serviced</label>
                 <div class="flex gap-5">
-                 <span class="flex gap-2"><input name="serviced" id="serviced" type="radio" value="Yes">Yes</span>
-                <span class="flex gap-2"><input type="radio" name="serviced" id="serviced" value="No">No</span>
+                 <span class="flex gap-2"><input name="serviced" id="serviced" type="radio" value="1">Yes</span>
+                <span class="flex gap-2"><input type="radio" name="serviced" id="serviced" value="0">No</span>
                 </div>
             </div>
-             <div class="w-[48%] flex flex-col gap-3">
+             <div class="lg:w-[48%] w-full md:w-[70%] sm:w-[80%] flex flex-col gap-3">
                 <label for="SE">Stable Electricity (24/7)</label>
                 <div class="flex gap-5">
-                 <span class="flex gap-2"><input name="Stable Electricity" id="SE" type="radio" value="Yes">Yes</span>
-                <span class="flex gap-2"><input type="radio" name="Stable Electricity" id="SE" value="No">No</span>
+                 <span class="flex gap-2"><input name="Stable Electricity" id="SE" type="radio" value="1">Yes</span>
+                <span class="flex gap-2"><input type="radio" name="Stable Electricity" id="SE" value="0">No</span>
                 </div>
             </div> 
             
-    <button onclick="showLoader()" class="text-[white] w-[20%] bg-[#C0A062] font-light transition-[0.6s] py-3 mt-10 rounded-sm cursor-pointer">Get Estimate</button>
+    <button onclick="submitForm(event)" class="text-[white] lg:w-[20%] w-[60%] md:w-[40%] bg-[#C0A062] font-light transition-[0.6s] py-3  mt-10 rounded-sm cursor-pointer">Get Estimate</button>
     </form>
     <div class="fixed h-[100vh] w-full top-0 left-0 backdrop-blur-sm z-[99] flex justify-center items-center" id="loading" style="display: none;">
         <i class="fa-solid fa-spinner fa-spin fa-2x" style="color:#C0A062;"></i>
     </div>
+     <hr class="border-black mx-auto mt-10">
+    <footer class="flex lg:flex-row flex-col justify-between items-center w-full h-[100px] mt-5">
+        <p class="lg:text-[20px] md:text-[18px] text-[16px]">© 2025 MarsHouse. All rights reserved.</p>
+        <div class="socials w-[30%] justify-between flex text-[20px]  transition-[0.3s]">
+            <a class="hover:text-[#C0A062]" href="https://github.com/IamMishael06/marsHouse"><i class="fa-brands fa-github"></i></a>
+            <a class="hover:text-[#C0A062]" href="https://www.linkedin.com/in/-tari-namikpoh/"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a class="hover:text-[#C0A062]" href="tarilate.onrender.com"><i class="fa-solid fa-globe"></i></a>
+        </div>
+
+    </footer>
    
   
       
