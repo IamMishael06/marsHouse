@@ -61,13 +61,13 @@ Encoding:
 ### 🚀 Usage
 
 Clone Repository
-```python
+```
 git clone https://github.com/yourusername/marhouse.git
 cd marhouse
 ```
 
 install dependencies
-```python
+```
 pip install -r requirements.txt
 
 ```
