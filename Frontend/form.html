@@ -1,138 +1,347 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MarsHouse</title>
-    <link rel="stylesheet" href="style.css">
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-     <link rel="stylesheet"
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet" />
+    <link
+      rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-      crossorigin="anonymous" referrerpolicy="no-referrer" />
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
-</head>
-<body class="mx-auto w-[90%]">
-        <nav class="w-full mx-auto flex md:flex-row items-center h-[80px] flex-col justify-between mt-10">
-    <div class="logo text-[40px]"><a href="home.html"><span class="text-[#C0A062]">M</span>ars<span class="text-[#C0A062]">H</span>ouse</a></div>
-    <ul class="nav-items flex  w-[30%] items-center text-[20px]  gap-[20%] ">
-        <li class="hover:text-[#C0A062]  transition-[0.3s] "><a href="./home.html#about">About</a></li>
-        <li class="hover:text-[#C0A062]  transition-[0.3s] "><a href="./home.html#Hiw">How it works</a></li>
-        <li class="hover:text-[#C0A062]  transition-[0.3s] "><a href="form.html">Price</a></li>
-    </ul>
+  </head>
+  <body class="mx-auto w-[90%]">
+    <nav
+      class="w-full mx-auto flex md:flex-row items-center h-[80px] flex-col justify-between mt-10">
+      <div class="logo text-[40px]">
+        <a href="index.html"
+          ><span class="text-[#C0A062]">M</span>ars<span class="text-[#C0A062]"
+            >H</span
+          >ouse</a
+        >
+      </div>
+      <ul class="nav-items flex w-[30%] items-center text-[20px] gap-[20%]">
+        <li class="hover:text-[#C0A062] transition-[0.3s]">
+          <a href="./index.html#about">About</a>
+        </li>
+        <li class="hover:text-[#C0A062] transition-[0.3s]">
+          <a href="./index.html#Hiw">How it works</a>
+        </li>
+        <li class="hover:text-[#C0A062] transition-[0.3s]">
+          <a href="form.html">Price</a>
+        </li>
+      </ul>
     </nav>
-    <hr class="border-[0.5px] border-black mx-auto mt-5">
+    <hr class="border-[0.5px] border-black mx-auto mt-5" />
     <h1 class="lg:text-[80px] md:text-[60px] text-[40px]">Property Details</h1>
-    <p class="text-[#5f5f5f83] lg:w-[80%] md:text-[16px] text-[14px]"><i class="fa-solid fa-circle-info text-[red]"></i> The price estimates provided are for informational purposes only. Although accurate, Actual property values may differ due to market fluctuations, inflation, individual seller preferences, and the inherent limitations of predictive models.</p>
+    <p class="text-[#5f5f5f83] lg:w-[80%] md:text-[16px] text-[14px]">
+      <i class="fa-solid fa-circle-info text-[red]"></i> The price estimates
+      provided are for informational purposes only. Although accurate, Actual
+      property values may differ due to market fluctuations, inflation,
+      individual seller preferences, and the inherent limitations of predictive
+      models. Incosistent properties can produce less accurate results.
+    </p>
 
-    <form method="post" action="" class="h-auto lg:h-[70vh] w-full mt-5 flex flex-col lg:flex-row flex-wrap gap-5 justify-between">
-            <div class="lg:w-[48%] w-full md:w-[70%] sm:w-[80%]  flex flex-col gap-3">
-                <label for="bedrooms">Number of Bedrooms</label>
-                <input class="border-[1px] border-[#0000007d] rounded-sm h-[40px] pl-3" type="number" name="bedroom" id="bedrooms" placeholder="E.g., 3" required>
-            </div>
-            <div class="lg:w-[48%] w-full md:w-[70%] sm:w-[80%] flex flex-col gap-3">
-                <label for="bathrooms">Number of Bathrooms</label>
-                <input class="border-[1px] border-[#0000007d] rounded-sm h-[40px] pl-3" type="number" name="bathroom" id="bathrooms" placeholder="E.g., 2" required>
-            </div>
-            <div class="lg:w-[48%] w-full md:w-[70%] sm:w-[80%] flex flex-col gap-3">
-                <label for="toilets">Number of Toilets</label>
-                <input class="border-[1px] border-[#0000007d] rounded-sm h-[40px] pl-3" type="number" name="toilets" id="toilets" placeholder="E.g., 2" required>
-            </div>
-            <div class="lg:w-[48%] w-full md:w-[70%] sm:w-[80%] flex flex-col gap-3">
-                <label for="extras">Extras (Number of exclusive utilities. e.g pools, garden, theatre room )</label>
-                <input class="border-[1px] border-[#0000007d] rounded-sm h-[40px] pl-3" type="number" name="extras" id="extras" placeholder="E.g 1" required>
-            </div>
-            <div class="lg:w-[48%] w-full md:w-[70%] sm:w-[80%] flex flex-col gap-3">
-                <label for="town">Town</label>
-                <input type="text" name="town" id="town" class="border-[1px] border-[#0000007d] rounded-sm h-[40px] pl-3" placeholder="E.g., Ikeja" required>
-            </div>
-            <div class="lg:w-[48%] w-full md:w-[70%] sm:w-[80%] flex flex-col gap-3">
-                <label for="state">State</label>
-                <select name="state" id="state" class="border-[1px] border-[#0000007d] rounded-sm h-[40px] pl-3" required>
-                    <option value="">Select State</option>
-                    <option value="Lagos">Lagos</option>
-                    <option value="Abuja">Abuja</option>
-                    <option value="Oyo">Oyo </option>
-                    <option value="Ogun">Ogun</option>
-                    <option value="Delta">Delta</option>
-                    <option value="Enugu">Enugu</option>
-                    <option value="Kaduna">Kaduna</option>
-                    <option value="Rivers">Rivers</option>
-                </select>
-            </div>
-             
-             <div class="lg:w-[48%] w-full md:w-[70%] sm:w-[80%] flex flex-col gap-3">
-                <label for="title">Title (type of house)</label>
-                <select name="title" id="title" class="border-[1px] border-[#0000007d] rounded-sm h-[40px] pl-3" required>
-                    <option value="">Select Apartment type</option>
-                    <option value="flat apartment">Flat apartment</option>
-                    <option value="terraced duplex">Terraced duplex</option>
-                    <option value="blocks of flats">Blocks of flats</option>
-                    <option value="semi detached duplex">Semi detached duplex</option>
-                    <option value="detached duplex">Detached duplex</option>
-                    <option value="mini flat apartment">Mini flat apartment   </option>
-                    <option value="massionette">Massionette</option>
-                    <option value="mini flat self contain flat apartment">Mini flat self contain</option>
-                    <option value="mini flat studio apartment flat apartment">Studio apartment (self contain)</option>
-                    <option value="shared apartment flat apartment">Shared apartment</option>
-                    <option value="penthouse flat apartment">Penthouse</option>
-                    <option value="detached bungalow">Detached bungalow</option>
-                    <option value="studio apartment flat apartment">Studio apartment</option>
-                    <option value="commercial property">Commercial property</option>
-                    <option value="semi detached bungalow">Semi detached bungalow</option>
-                    <option value="terraced bungalow">Terraced bungalow </option>
-                </select>
-                </div> 
-            <div class="lg:w-[48%] w-full md:w-[70%] sm:w-[80%] flex flex-col gap-3">
-                <label for="parking">Parking Space</label>
-                <div class="flex gap-5">
-                 <span class="flex gap-2"><input class="" name="parking_lot" id="parking" type="radio" value="1">Yes</span>
-                <span class="flex gap-2"><input type="radio" name="parking_lot" id="parking" value="0">No</span>
-                </div>
-            </div>
-            <div class="lg:w-[48%] w-full md:w-[70%] sm:w-[80%] flex flex-col gap-3">
-                <label for="SE">Serviced</label>
-                <div class="flex gap-5">
-                 <span class="flex gap-2"><input name="serviced" id="serviced" type="radio" value="1">Yes</span>
-                <span class="flex gap-2"><input type="radio" name="serviced" id="serviced" value="0">No</span>
-                </div>
-            </div>
-             <div class="lg:w-[48%] w-full md:w-[70%] sm:w-[80%] flex flex-col gap-3">
-                <label for="SE">Stable Electricity (24/7)</label>
-                <div class="flex gap-5">
-                 <span class="flex gap-2"><input name="Stable Electricity" id="SE" type="radio" value="1">Yes</span>
-                <span class="flex gap-2"><input type="radio" name="Stable Electricity" id="SE" value="0">No</span>
-                </div>
-            </div> 
-            
-    <button onclick="submitForm(event)" class="text-[white] lg:w-[20%] w-[60%] md:w-[40%] bg-[#C0A062] font-light transition-[0.6s] py-3  mt-10 rounded-sm cursor-pointer">Get Estimate</button>
-    </form>
-    <div class="fixed h-[100vh] w-full top-0 left-0 backdrop-blur-sm z-[99] flex justify-center items-center" id="loading" style="display: none;">
-        <i class="fa-solid fa-spinner fa-spin fa-2x" style="color:#C0A062;"></i>
-    </div>
-     <hr class="border-black mx-auto mt-10">
-    <footer class="flex lg:flex-row flex-col justify-between items-center w-full h-[100px] mt-5">
-        <p class="lg:text-[20px] md:text-[18px] text-[16px]">© 2025 MarsHouse. All rights reserved.</p>
-        <div class="socials w-[30%] justify-between flex text-[20px]  transition-[0.3s]">
-            <a class="hover:text-[#C0A062]" href="https://github.com/IamMishael06/marsHouse"><i class="fa-brands fa-github"></i></a>
-            <a class="hover:text-[#C0A062]" href="https://www.linkedin.com/in/-tari-namikpoh/"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a class="hover:text-[#C0A062]" href="tarilate.onrender.com"><i class="fa-solid fa-globe"></i></a>
+    <form
+      method="post"
+      action=""
+      class="h-auto lg:h-[70vh] w-full mt-5 flex flex-col lg:flex-row flex-wrap gap-5 justify-between">
+      <div class="lg:w-[48%] w-full md:w-[70%] sm:w-[80%] flex flex-col gap-3">
+        <label for="bedrooms">Bedrooms</label>
+        <input
+          class="border-[1px] border-[#0000007d] rounded-sm h-[40px] pl-3"
+          type="number"
+          name="bedroom"
+          id="bedrooms"
+          placeholder="E.g., 3"
+          required />
+      </div>
+      <div class="lg:w-[48%] w-full md:w-[70%] sm:w-[80%] flex flex-col gap-3">
+        <label for="bathrooms">Bathrooms</label>
+        <input
+          class="border-[1px] border-[#0000007d] rounded-sm h-[40px] pl-3"
+          type="number"
+          name="bathroom"
+          id="bathrooms"
+          placeholder="E.g., 2"
+          required />
+      </div>
+      <div class="lg:w-[48%] w-full md:w-[70%] sm:w-[80%] flex flex-col gap-3">
+        <label for="toilets">Toilets</label>
+        <input
+          class="border-[1px] border-[#0000007d] rounded-sm h-[40px] pl-3"
+          type="number"
+          name="toilets"
+          id="toilets"
+          placeholder="E.g., 2"
+          required />
+      </div>
+      <div class="lg:w-[48%] w-full md:w-[70%] sm:w-[80%] flex flex-col gap-3">
+        <label for="extras"
+          >Extras (Number of exclusive utilities. e.g pools, garden, theatre
+          room )</label
+        >
+        <input
+          class="border-[1px] border-[#0000007d] rounded-sm h-[40px] pl-3"
+          type="number"
+          name="extras"
+          id="extras"
+          placeholder="E.g 1"
+          required />
+      </div>
+      <div class="lg:w-[48%] w-full md:w-[70%] sm:w-[80%] flex flex-col gap-3">
+        <label for="town">Town</label>
+        <select
+          name="town"
+          id="town"
+          class="border-[1px] border-[#0000007d] rounded-sm h-[40px] pl-3"
+          required
+          onchange="handleTownChange(this.value)"
+          >
+          <option value="">Select Town</option>
+          <option value="Abule_Egba">Abule Egba</option>
+          <option value="Ado_Odo/Ota">Ado Odo/Ota</option>
+          <option value="Agege">Agege</option>
+          <option value="Ajah">Ajah</option>
+          <option value="Akinyele">Akinyele</option>
+          <option value="Alimosho">Alimosho</option>
+          <option value="Amuwo_Odofin">Amuwo Odofin</option>
+          <option value="Apo">Apo</option>
+          <option value="Asaba">Asaba</option>
+          <option value="Asokoro">Asokoro</option>
+          <option value="Bariga">Bariga</option>
+          <option value="Bwari">Bwari</option>
+          <option value="Dakwo">Dakwo</option>
+          <option value="Dei-Dei">Dei-Dei</option>
+          <option value="Durumi">Durumi</option>
+          <option value="Egbe/Idimu">Egbe/Idimu</option>
+          <option value="Ejigbo">Ejigbo</option>
+          <option value="Enugu">Enugu</option>
+          <option value="Galadinmawa">Galadinmawa</option>
+          <option value="Gaduwa">Gaduwa</option>
+          <option value="Garki_1">Garki 1</option>
+          <option value="Garki_2">Garki 2</option>
+          <option value="Gbagada">Gbagada</option>
+          <option value="Guzape">Guzape</option>
+          <option value="Gwarinpa">Gwarinpa</option>
+          <option value="Ibadan">Ibadan</option>
+          <option value="Ibadan_North">Ibadan North</option>
+          <option value="Ibeju-Lekki">Ibeju-Lekki</option>
+          <option value="Ido">Idu</option>
+          <option value="Ijebu">Iju</option>
+          <option value="Ikoyi">Ikoyi</option>
+          <option value="Ikorodu">Ikorodu</option>
+          <option value="Ikotun/Igando">Ikotun/Igando</option>
+          <option value="Ikeja">Ikeja</option>
+          <option value="Ikotun/Igando">Ikotun/Igando</option>
+          <option value="Ilupeju">Ilupeju</option>
+          <option value="Ipaja">Ipaja</option>
+          <option value="Isolo">Isolo</option>
+          <option value="Jabi">Jabi</option>
+          <option value="Jahi">Jahi</option>
+          <option value="Kaduna_North">Kaduna North</option>
+          <option value="Kagarko">Kagarko</option>
+          <option value="Kado">Kado</option>
+          <option value="Karmo">Karmo</option>
+          <option value="Katampe_Ext">Katampe Ext</option>
+          <option value="Katampe_Main">Katampe Main</option>
+          <option value="Kaura_(Games_Village)">Kaura (Games Village)</option>
+          <option value="Ketu">Ketu</option>
+          <option value="Kosofe/Ikosi">Kosofe/Ikosi</option>
+          <option value="Kubwa">Kubwa</option>
+          <option value="Lagos_Island">Lagos Island</option>
+          <option value="Lekki">Lekki</option>
+          <option value="Life_Camp">Life Camp</option>
+          <option value="Lokogoma">Lokogoma</option>
+          <option value="Lugbe">Lugbe</option>
+          <option value="Mabushi">Mabushi</option>
+          <option value="Maitama">Maitama</option>
+          <option value="Maryland">Maryland</option>
+          <option value="Mpape">Mpape</option>
+          <option value="Mushin">Mushin</option>
+          <option value="Nbora">Nbora</option>
+          <option value="Nyanya">Nyanya</option>
+          <option value="Obafemi_Owode">Obafemi Owode</option>
+          <option value="Odo">Ogba</option>
+          <option value="Ogba-Egbema-Ndoni">Ogba-Egbema-Ndoni</option>
+          <option value="Ogudu">Ogudu</option>
+          <option value="Ojo">Ojo</option>
+          <option value="Ojodu">Ojodu</option>
+          <option value="Ojota">Ojota</option>
+          <option value="Okota">Okota</option>
+          <option value="Oluyole">Oluyole</option>
+          <option value="Oshimili">Oshimili</option>
+          <option value="Oshodi">Oshodi</option>
+          <option value="Shomolu">Shomolu</option>
+          <option value="Surulere">Surulere</option>
+          <option value="Sangotedo">Sangotedo</option>
+          <option value="Utako">Utako</option>
+          <option value="Victoria_Island">Victoria Island</option>
+          <option value="Wumba">Wumba</option>
+          <option value="Wuse_1">Wuse 1</option>
+          <option value="Wuse_2">Wuse 2</option>
+          <option value="Wuye">Wuye</option>
+          <option value="Yaba">Yaba</option>
+        </select>
+      </div>
+
+      <div class="lg:w-[48%] w-full md:w-[70%] sm:w-[80%] flex flex-col gap-3">
+        <label for="state">State</label>
+        <select
+          name="state"
+          id="state"
+          class="border-[1px] border-[#0000007d] rounded-sm h-[40px] pl-3"
+          required
+          >
+          <option value="">Select State</option>
+          <option value="Lagos">Lagos</option>
+          <option value="Abuja">Abuja</option>
+          <option value="Oyo">Oyo</option>
+          <option value="Ogun">Ogun</option>
+          <option value="Delta">Delta</option>
+          <option value="Enugu">Enugu</option>
+          <option value="Kaduna">Kaduna</option>
+          <option value="Rivers">Rivers</option>
+        </select>
+      </div>
+
+      <div class="lg:w-[48%] w-full md:w-[70%] sm:w-[80%] flex flex-col gap-3">
+        <label for="title">Title (type of house)</label>
+        <select
+          name="title"
+          id="title"
+          class="border-[1px] border-[#0000007d] rounded-sm h-[40px] pl-3"
+          required>
+          <option value="">Select Apartment type</option>
+          <option value="flat apartment">Flat apartment</option>
+          <option value="terraced duplex">Terraced duplex</option>
+          <option value="blocks of flats">Blocks of flats</option>
+          <option value="semi detached duplex">Semi detached duplex</option>
+          <option value="detached duplex">Detached duplex</option>
+          <option value="mini flat apartment">Mini flat apartment</option>
+          <option value="massionette">Massionette</option>
+          <option value="mini flat self contain flat apartment">
+            Mini flat self contain
+          </option>
+          <option value="mini flat studio apartment flat apartment">
+            Studio apartment (self contain)
+          </option>
+          <option value="shared apartment flat apartment">
+            Shared apartment
+          </option>
+          <option value="penthouse flat apartment">Penthouse</option>
+          <option value="detached bungalow">Detached bungalow</option>
+          <option value="studio apartment flat apartment">
+            Studio apartment
+          </option>
+          <option value="commercial property">Commercial property</option>
+          <option value="semi detached bungalow">Semi detached bungalow</option>
+          <option value="terraced bungalow">Terraced bungalow</option>
+        </select>
+      </div>
+      <div class="lg:w-[48%] w-full md:w-[70%] sm:w-[80%] flex flex-col gap-3">
+        <label for="parking">Parking Space</label>
+        <div class="flex gap-5">
+          <span class="flex gap-2"
+            ><input
+              class=""
+              name="parking_lot"
+              id="parking"
+              type="radio"
+              value="1" />Yes</span
+          >
+          <span class="flex gap-2"
+            ><input
+              type="radio"
+              name="parking_lot"
+              id="parking"
+              value="0" />No</span
+          >
         </div>
+      </div>
+      <div class="lg:w-[48%] w-full md:w-[70%] sm:w-[80%] flex flex-col gap-3">
+        <label for="SE">Serviced</label>
+        <div class="flex gap-5">
+          <span class="flex gap-2"
+            ><input
+              name="serviced"
+              id="serviced"
+              type="radio"
+              value="1" />Yes</span
+          >
+          <span class="flex gap-2"
+            ><input
+              type="radio"
+              name="serviced"
+              id="serviced"
+              value="0" />No</span
+          >
+        </div>
+      </div>
+      <div class="lg:w-[48%] w-full md:w-[70%] sm:w-[80%] flex flex-col gap-3">
+        <label for="SE">Stable Electricity (24/7)</label>
+        <div class="flex gap-5">
+          <span class="flex gap-2"
+            ><input
+              name="Stable Electricity"
+              id="SE"
+              type="radio"
+              value="1" />Yes</span
+          >
+          <span class="flex gap-2"
+            ><input
+              type="radio"
+              name="Stable Electricity"
+              id="SE"
+              value="0" />No</span
+          >
+        </div>
+      </div>
 
+      <button
+        onclick="submitForm(event)"
+        class="text-[white] lg:w-[20%] w-[60%] md:w-[40%] bg-[#C0A062] font-light transition-[0.6s] py-3 mt-10 rounded-sm cursor-pointer">
+        Get Estimate
+      </button>
+    </form>
+    <div
+      class="fixed h-[100vh] w-full top-0 left-0 backdrop-blur-sm z-[99] flex justify-center items-center"
+      id="loading"
+      style="display: none">
+      <i class="fa-solid fa-spinner fa-spin fa-2x" style="color: #c0a062"></i>
+    </div>
+    <hr class="border-black mx-auto mt-10" />
+    <footer
+      class="flex lg:flex-row flex-col justify-between items-center w-full h-[100px] mt-5">
+      <p class="lg:text-[20px] md:text-[18px] text-[16px]">
+        © 2025 MarsHouse. All rights reserved.
+      </p>
+      <div
+        class="socials w-[30%] justify-between flex text-[20px] transition-[0.3s]">
+        <a
+          class="hover:text-[#C0A062]"
+          href="https://github.com/IamMishael06/marsHouse"
+          ><i class="fa-brands fa-github"></i
+        ></a>
+        <a
+          class="hover:text-[#C0A062]"
+          href="https://www.linkedin.com/in/-tari-namikpoh/"
+          ><i class="fa-brands fa-linkedin-in"></i
+        ></a>
+        <a class="hover:text-[#C0A062]" href="tarilate.onrender.com"
+          ><i class="fa-solid fa-globe"></i
+        ></a>
+      </div>
     </footer>
-   
-  
-      
-     
-       
-       
-        
-       
-       
-<script src="index.js"></script>
-</body>
 
+    <script src="index.js"></script>
+  </body>
 </html>
