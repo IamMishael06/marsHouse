@@ -153,7 +153,7 @@ States
 ### 📦 Deployment
 
 * Initial release will run locally.
-* Future releases will have a Django-powered web interface for easy input and prediction.
+* Future releases will have a FastAPI powered web interface for easy input and prediction.
 * There will be more feature egineering on existing model to improve model scores and prediction.
 
 
