@@ -61,18 +61,18 @@ Encoding:
 ### 🚀 Usage
 
 Clone Repository
-```
+```python
 git clone https://github.com/yourusername/marhouse.git
 cd marhouse
 ```
 
 install dependencies
-```
+```python
 pip install -r requirements.txt
 
 ```
 
-```
+```python
 import pandas as pd
 from joblib import load
 def HousePrediction(df, filename, log_target=True):
