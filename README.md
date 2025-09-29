@@ -10,7 +10,9 @@ The project includes:
 
 * Model training using `RandomForestRegressor` for accurate predictions.
 
-* Deployment-ready backend with Django.
+* Deployment-ready backend with FastAPI.
+
+* Containerize with Docker and deploy.
 
 ### ⚙️ Tech Stack
 
