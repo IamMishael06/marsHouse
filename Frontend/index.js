@@ -1,3 +1,12 @@
+const notyf = new Notyf({
+  duration: 2000,
+  position : { x: "right", y: "top" },
+  dismissable: true,
+  types : [
+    { type: 'error', background: 'indianred', icon: false  },
+    {type: 'success', background: 'gold', icon: false  }
+  ]
+});
 // town -> state mapping (keys MUST match your <option value="..."> exactly)
 const townToState = {
   "Abule_Egba": "Lagos",
@@ -28,7 +37,7 @@ const townToState = {
   "Ibadan": "Oyo",
   "Ibadan_North": "Oyo",
   "Ibeju-Lekki": "Lagos",
-  "Ido": "Abuja",            // note: your option value used "Ido" (display "Idu"); keep both if needed
+  "Ido": "Abuja",           
   "Idu": "Abuja",
   "Ijebu": "Ogun",
   "Ikoyi": "Lagos",
@@ -63,8 +72,8 @@ const townToState = {
   "Nbora": "Abuja",
   "Nyanya": "Abuja",
   "Obafemi_Owode": "Ogun",
-  "Odo": "Ogun",             // option value "Odo" with display "Ogba" in your HTML
-  "Ogba": "Lagos",           // include both just in case
+  "Odo": "Ogun",             
+  "Ogba": "Lagos",         
   "Ogba-Egbema-Ndoni": "Rivers",
   "Ogudu": "Lagos",
   "Ojo": "Lagos",
@@ -112,7 +121,7 @@ function submitForm(event) {
       data[inputs[i].name] = inputs[i].value;
     } else {
       data[inputs[i].name] = null;
-      alert(`${inputs[i].name} cannot be empty`);
+      notyf.error(`${inputs[i].name} cannot be empty`);
       return;
     }
     //==========================  Error handling for negative numbers
@@ -120,7 +129,7 @@ function submitForm(event) {
       ["bedroom", "bathroom", "toilets", "extras"].includes(inputs[i].name) &&
       (Number(data[inputs[i].name]) < 0 || Number(data[inputs[i].name]) === 0)
     ) {
-      alert(`${inputs[i].name} cannot be negative or zero`);
+      notyf.error(`${inputs[i].name} cannot be negative or zero`);
       return;
     }
   }
@@ -130,7 +139,7 @@ function submitForm(event) {
       data[selects[i].name] = selects[i].value;
     } else {
       data[selects[i].name] = null;
-      alert(`${selects[i].name} cannot be null`);
+      notyf.error(`${selects[i].name} cannot be null`);
       return;
     }
   }
@@ -150,15 +159,15 @@ function submitForm(event) {
 
   // ==========================  Logic consistency checks
   if (data["bathroom"] > data["bedroom"]) {
-    alert("Number of Bathrooms cannot be more than number of Bedrooms!");
+    notyf.error("Number of Bathrooms cannot be more than number of Bedrooms!");
     return;
   }
   if (data["bathroom"] > data["toilets"]) {
-    alert("Number of Bathrooms cannot be more than number of Toilets");
+    notyf.error("Number of Bathrooms cannot be more than number of Toilets");
     return;
   }
   if (data["bedroom"] == 1 && (data["bathroom"] > 1 || data["toilets"] > 1)) {
-    alert(
+    notyf.error(
       "For 1 Bedroom, number of Bathrooms and Toilets cannot be more than 1"
     );
     return;
@@ -181,7 +190,7 @@ function submitForm(event) {
     })
     .catch((error) => {
       console.log(error.response?.data || error.error);
-      alert(
+      notyf.error(
         "An error occurred while processing your request. Please try again."
       );
       //==========================  Hide loader
