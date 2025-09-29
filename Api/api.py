@@ -8,6 +8,7 @@ from pathlib import Path
 import sys
 import DataEngineering.Model.module as module # Importing the module where custom transformers are defined
 import DataEngineering.Model.module.preprocessor as preprocessor # Importing the preprocessor module
+from fastapi.staticfiles import StaticFiles # For serving static files
 
 # Patch joblib imports
 sys.modules["module"] = module # Patch the module
@@ -21,7 +22,7 @@ MODEL_PATH = Path(__file__).resolve().parent.parent / "DataEngineering" / "Model
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://127.0.0.1:5500"],  
+    allow_origins= ["http://localhost:8000", "http://127.0.0.1:8000"],   # Adjust as necessary for your frontend's origin 
     allow_credentials=True,
     allow_methods=["*"],  
     allow_headers=["*"],   
@@ -61,6 +62,18 @@ def HousePrediction(df, filename, log_target=True):
 
 @app.post("/predict")
 def make_prediction(form_data: FormData):
+    for data in form_data:
+        if data is None or data == "":
+            return {"error": "All fields are required."}
+        if data in ["bedroom", "parking_lot", "bathroom", "toilets", "serviced", "extras", "Stable_Electricity"]:
+            if not isinstance(data, int) or data < 0:
+                return {"error": f"{data} must be a non-negative integer."}
+            if data in ["bedroom", "bathroom", "toilets"] and data == 0:
+                return {"error": f"{data} must be at least 1."}
+            if data in ["bedroom", "bathroom", "toilets"] and data > 20:
+                return {"error": f"{data} seems too high. Please enter a realistic number."}
+            if data in ["bathroom"] > data in ["bedroom", "toilets"]:
+                return {"error": "Number of bathrooms cannot exceed number of bedrooms or toilets."}
     # Turning the first letter in town to uppercase to match training data
     form_data.town  = form_data.town.capitalize()
     # Replacing ,,;,-,_ with whitespace to match training data
@@ -74,3 +87,8 @@ def make_prediction(form_data: FormData):
     return {"predicted_price": predicted_price} 
 
 
+app.mount(
+    "/", 
+    StaticFiles(directory=Path(__file__).resolve().parent.parent / "Frontend", html=True), 
+    name="Frontend"
+)
