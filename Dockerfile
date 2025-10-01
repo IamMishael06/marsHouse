@@ -1,4 +1,4 @@
-# 1. Use official Python image
+# Tells Docker: “Start building this image using an existing base image.” Use official Python image
 FROM python:3.13-slim
 
 # 2. Set working directory inside container
@@ -10,7 +10,7 @@ COPY requirements.txt .
 # 4. Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# 5. Copy entire project
+# 5. Copies everything in your project folder into the container’s /app. Copies entire project
 COPY . .
 
 # 6. Expose FastAPI port
