@@ -172,6 +172,10 @@ function submitForm(event) {
     );
     return;
   }
+  if (data["title"].includes("self") && (data["bedroom"] || data["bathroom"] > 1 || data["toilets"])) {
+    notyf.error("Self contain apartment should have 1 bedroom and bathroom")
+    return;
+  }
   // tOWN AND STATE LOGIC
 
 
