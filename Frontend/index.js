@@ -158,8 +158,8 @@ function submitForm(event) {
   console.log(data);
 
   // ==========================  Logic consistency checks
-  if (data["bathroom"] > data["bedroom"]) {
-    notyf.error("Number of Bathrooms cannot be more than number of Bedrooms!");
+  if ((data["bathroom"] || data["toilets"]) > (data["bedroom"] + 1)) {
+    notyf.error("Number of Bathrooms|Toilets cannot be more than twice the number of Bedrooms!");
     return;
   }
   if (data["bathroom"] > data["toilets"]) {
